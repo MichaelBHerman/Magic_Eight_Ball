@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">  
+    <link rel='stylesheet' href='index.css'>
+
+    <title>Ask The Universe</title>
+</head>
+<body>
+    <video id='background-video' autoplay loop muted><source src='space.mp4' type='video/mp4'></video>
+    <div id="content">
+        <h1>The Universe Knows All</h1>
+        <textarea id='question' cols='30' rows='2' placeholder='Ask your question here...'></textarea>
+        <br>
+        <button>Get your answer!</button>
+            <div id='eightball'>
+                <p id='answer'>LOL, nope!</p>
+            </div>
+    </div>
+    <script type='text/javascript'>
+        function randomNumber(max_number) {
+            return Math.round(Math.random()*max_number);
+        }
+
+        let button = document.querySelector('button');
+        let answer = document.querySelector('#answer');
+
+        button.addEventListener('click', function() {
+            let number = randomNumber(7);
+
+            let universeAnswer = "";
+
+            switch(number) {
+                case 0:
+                    number = "LOL, Nope!"
+                    break;
+                case 1: 
+                    number = "BRUH...of course not!"
+                    break;
+                case 2: 
+                    number = "Seriously.... Not even close!"  
+                    break;
+                case 3:
+                    number = "Not Happening! Sorry not sorry."      
+                    break;
+                case 4:
+                    number = "Yes! A million times yes!"      
+                    break;
+                case 5:
+                    number = "I mean, I guess so..."      
+                    break;
+                case 6:
+                    number = "C'mon, thats not even a question...OF COURSE YES!"      
+                    break;
+                case 7:
+                    number = "Yesssssssir!"      
+                    break;        
+            }
+            
+            answer.innerHTML = number;
+        })
+
+
+    </script>
+</body>
+</html>
